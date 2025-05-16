@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Diagrama de Mermaid Grande con Scroll</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.8.0/dist/mermaid.min.js"></script>
+    <style>
+        body { margin: 0; } /* Elimina márgenes predeterminados del body */
+        .mermaid {
+            width: 100%; /* Ocupa todo el ancho del contenedor */
+            /* La altura se ajustará automáticamente según el contenido del diagrama */
+        }
+        html, body {
+            height: auto; /* Permite que el contenido crezca y genere scroll si es necesario */
+        }
+    </style>
+</head>
+<body>
+
+<div class="mermaid">
+    graph TD
+        A[🧩 El Problema] --> B((⚖️ Dolor / Movimiento))
+        %% Dolor / Movimiento
+        B --> B1(⚙️ Mecánico)
+        B --> B2(🔥 No Mecánico)
+        B1 --> B1d(🎯 Control Motor)
+        B1 --> B1a(🦴 Articular)
+        B1a --> B1a1(Hipomovilidad)
+        B1a --> B1a2(Hipermovilidad)
+        B1 --> B1b(💪 Muscular)
+        B1b --> B1b1(Vencedor/Facilitado)
+        B1b --> B1b2(Vencido/Inhibido)
+        B1 --> B1c(🧠 Nervioso)
+        B1c --> B1c1(Neurodinamia)
+        B1c --> B1c2(Neuropatía)
+        B2 --> B2a(Sensibilización)
+        B2a --> B2a1(Periférica)
+        B2a --> B2a2(Central)
+        B2a --> B2a3(Medular)
+        B2 --> B2b(Patrón Maladaptativo)
+        B2 --> B2c(Visceral)
+        B2 --> B2d(Otros)
+        %% Movimiento como subcategoría de Control Motor
+        B1d --> CM1(🔧 Alteraciones del Movimiento)
+        CM1 --> CM1a(↔️ Rango de Movimiento)
+        CM1a --> CM1a1(Rígido)
+        CM1a --> CM1a2(Hiperlaxo)
+        CM1 --> CM1c(📍 Distribución Regional)
+        CM1c --> CM1c1(Local)
+        CM1c --> CM1c2(Global)
+        CM1 --> CM1b(🔄 Comportamiento Motor)
+        CM1b --> CM1b1(Adaptativo)
+        CM1b --> CM1b2(Maladaptativo)
+        %% Equivalencia representada con texto
+        B1c2 -- " igual " --> B2a1
+        %% Estilos de color
+        classDef articular fill:#f9f,stroke:#333,stroke-width:1px;
+        classDef muscular fill:#bbf,stroke:#333,stroke-width:1px;
+        classDef nervioso fill:#bfb,stroke:#333,stroke-width:1px;
+        classDef control fill:#ffd,stroke:#333,stroke-width:1px;
+        classDef movimiento fill:#fcf,stroke:#333,stroke-width:1px;
+        class B1a,B1a1,B1a2 articular;
+        class B1b,B1b1,B1b2 muscular;
+        class B1c,B1c1,B1c2 nervioso;
+        class B1d,CM1,CM1a,CM1a1,CM1a2,CM1b,CM1b1,CM1b2,CM1c,CM1c1,CM1c2 control;
+        class CM1a,CM1a1,CM1a2,CM1b,CM1b1,CM1b2,CM1c,CM1c1,CM1c2 movimiento;
+</div>
+
+<script>
+    mermaid.initialize({ startOnLoad: true });
+</script>
+
+</body>
+</html>
